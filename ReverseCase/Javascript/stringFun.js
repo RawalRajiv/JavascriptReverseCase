@@ -1,15 +1,14 @@
-function doReverseCase(){
-    var result = '';
-    var inputString = document.getElementById("txt-OriginalText").value.toString().trim();
-
-    if(validateInput(inputString)) {
-        result = reverseCase(inputString);
-        document.getElementById("div-Result").innerHTML = result;
+/*
+    Javascript function file
+    1. validateInput - validate string is empty or not 
+    2. reverseCase - To change each character of string to other case.
+ */
+function validateInput(params) {
+    var isValid = true;
+    if (params == undefined || params.length == 0) {
+        isValid = false;
     }
-    else {
-        alert("Please enter a valid input!");
-    }
-    
+    return isValid;
 }
 
 function reverseCase(params) {
@@ -33,12 +32,4 @@ function reverseCase(params) {
         i++;
     }
     return result;
-}
-
-function validateInput(params) {
-    var isValid = true;
-    if (params == undefined || params.length == 0) {
-        isValid = false;
-    }
-    return isValid;
 }
